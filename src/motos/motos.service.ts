@@ -28,20 +28,20 @@ export class MotosService {
     }
   }
 
-  create(CreateMotoDto: CreateMotoDto) {
+  create(createMotoDto: CreateMotoDto) {
     this.lastId++;
     const id = this.lastId;
 
     const novaMotoCadastro = {
       id,
-      ...CreateMotoDto,
+      ...createMotoDto,
     };
     this.motos.push(novaMotoCadastro);
 
     return novaMotoCadastro;
   }
 
-  update(id: number, UpdateMotoDto: UpdateMotoDto) {
+  update(id: number, updateMotoDto: UpdateMotoDto) {
     const motoExisteIndex = this.motos.findIndex((item) => item.id === id);
 
     if (motoExisteIndex < 0 || motoExisteIndex >= this.motos.length) {
@@ -51,7 +51,7 @@ export class MotosService {
 
       this.motos[motoExisteIndex] = {
         ...motoExiste,
-        ...UpdateMotoDto,
+        ...updateMotoDto,
       };
       return this.motos[motoExisteIndex];
     }
