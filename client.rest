@@ -1,0 +1,35 @@
+@baseUrl = http://127.0.0.1:3000
+
+### MOTOS
+### Listar todas as MOTOS
+
+GET {{baseUrl}}/motos/
+
+### Listar uma moto com o id
+
+GET {{baseUrl}}/motos/1/
+
+### Criando uma nova Moto
+POST {{baseUrl}}/motos/criar/
+Content-Type: application/json
+
+{
+    "marca": "Teste2",
+    "modelo": "Modelo2",
+    "ano": 2025
+}
+
+### Atualizando uma moto
+
+PATCH {{baseUrl}}/motos/atualizar/1/
+Content-Type: application/json
+
+{
+    "marca": "ATUALIZADOteste",
+    "modelo": "atualizandoTESTE",
+    "ano": 2023
+}
+
+### Deletando uma moto
+DELETE {{baseUrl}}/motos/deletar/2/
+
